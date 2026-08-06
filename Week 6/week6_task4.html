@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Fahrenheit Converter</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+	<h1>Turning Fahrenheit into Centigrade</h1>
+	<p> Enter a Fahrenheit </p>
+	<input type="text" id="Fahrenheit">
+
+	<br /><br/>
+	<button onclick="doCalucation()">Calcucation Button </button>
+    <!-- Display on HTML screen -->
+	<p id="DisplayResult"></p>
+
+	<script>
+		let userNumberEnter;
+	    let AreaResult;
+
+	function calculation(Fahrenheit){
+		let result = (Fahrenheit - 32) * 5 / 9; // Should included parentheses
+		return result;
+	}
+
+	function doCalucation(){
+        // Return number as integer
+		userNumberEnter = Number(document.getElementById("Fahrenheit").value);
+		AreaResult = calculation(userNumberEnter);
+		document.getElementById("DisplayResult").innerHTML = "The C is " + AreaResult;
+	}
+
+	</script>
+</body>
+</html>
