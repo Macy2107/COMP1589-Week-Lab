@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <canvas id="My-Canvas" width="550" height="400"></canvas>
+        <!-- Add color for canvas -->
+        <script>
+            const blue = "#0000FF";
+            const green = "#006600";
+            const brown = "#543725";
+            const red = "#FF0000";
+            const yellow = "#FFFF00";
+            const grey = "#666666";
+            const white = "#FFFFFF";
+            const black = "#000000";
+            let color;
+
+            const c = document.getElementById("My-Canvas");
+            const ctx = c.getContext("2d");
+            // Function to draw square
+            function drawFilledSquare(width, height, x, y, color) {
+                ctx.beginPath();
+                ctx.rect(x, y, width, height);
+                ctx.fillStyle = color;
+                ctx.fill();
+                ctx.strokeStyle = black;
+                ctx.lineWidth = 5;
+                ctx.stroke();
+            }
+
+            function turnAgeIntoColor(age) {
+                if (age >= 50) {
+                    color = grey;
+                }
+                else {
+                    color = black;
+                }
+                return color;
+            }
+            // Turn name into color
+            function turnNameIntoColor(Name) {
+                if (Name.length > 6) { // If name more than 6 characters
+                    color = white;
+                }
+                else {
+                    color = grey;
+                }
+                return color;
+            }
+            // Check eye color
+            function turnEyeColorIntoColor(eyeColor) {
+                if (eyeColor === "blue") {
+                    color = blue;
+                }
+                else if (eyeColor === "green") {
+                    color = green;
+                }
+                else if (eyeColor === "brown") {
+                    color = brown;
+                }
+                else {
+                    color = grey;
+                }
+                return color;
+            }
+
+            function draw() {
+                let age = 53;
+                let eyeColor = "green";
+                let Name = "Matt";
+
+                const colorTopLeft = turnAgeIntoColor(age);
+                const colorBottomLeft = turnNameIntoColor(Name);
+                const colorRight = turnEyeColorIntoColor(eyeColor);
+
+                drawFilledSquare(150, 150, 0, 0, colorTopLeft);
+                drawFilledSquare(150, 250, 0, 150, colorBottomLeft);
+                drawFilledSquare(400, 400, 150, 0, colorRight);
+            }
+
+            draw();
+        </script>
+    </body>
+</html>
