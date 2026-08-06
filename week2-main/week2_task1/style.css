@@ -1,0 +1,29 @@
+body {
+    background-color: rgb(92, 216, 216);
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+h1 {
+    color: brown;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 50px;
+    text-decoration: dashed;
+    text-align: center;
+    text-transform: unset;
+    text-shadow: 1cap;
+}
+
+img {
+    border: 5px solid saddlebrown;
+}
+
+aside p a {
+    color:burlywood;
+    font-style: italic;
+}
+
+p {
+    font-size: larger;
+}
